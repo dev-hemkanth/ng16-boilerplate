@@ -1,0 +1,101 @@
+@import '../../../styles/variables.scss';
+
+.selector-wrap {
+    width: 100%;
+    height: 40px;
+    &__content {
+      width: 315px;
+      .page-controller {
+        width: 60px;
+        cursor: pointer;
+        .dropdown {
+          background: $white;
+          position: relative;
+          display: inline-block;
+          width: 100%;
+          border-radius: 5px;
+          .arrow {
+            position: absolute;
+            right: 10px;
+            top: 3px;
+            i {
+              color: $blk-dark;
+              cursor: pointer;
+              &::before {
+                font-weight: bolder !important;
+                font-size: 12px !important;
+              }
+            }
+          }
+          .dropdown-toggle {
+            position: relative;
+            padding: 5px 5px;
+            cursor: pointer;
+            border-radius: 5px;
+            color: $blk-dark;
+            font-size: 14px;
+            height: 32px;
+            text-align: center;
+            border: none;
+            width: 35px;
+            &::after {
+              display: none;
+            }
+          }
+          .dropdown-menu {
+            inset: 0px 0px auto auto !important;
+            transform: translate3d(0px, 35px, 0px) !important;
+            width: 60px !important;
+            --bs-dropdown-min-width: 20px;
+            background: $white;
+            border-radius: 5px;
+            color: $blk-dark;
+            cursor: pointer;
+            text-decoration: none;
+            padding: 0;
+            min-height: auto;
+            max-height: 150px;
+            overflow-y: auto;
+            .options {
+              padding: 8px 10px;
+              height: 28px;
+              letter-spacing: 0.4px;
+              font-weight: 400;
+              font-size: 12px;
+              line-height: 14px;
+              &:first-of-type {
+                border-top-left-radius: 5px;
+                border-top-right-radius: 5px;
+              }
+              &:last-of-type {
+                border-bottom-left-radius: 5px;
+                border-bottom-right-radius: 5px;
+              }
+              &.active,
+              &:hover {
+                background: $slate-blue;
+                color: $white;
+              }
+            }
+          }
+        }
+      }
+      .display-wrap {
+        width: 62px;
+        &__content {
+          font-weight: 500;
+          font-size: 14px;
+          color: $palette-blue;
+        }
+      }
+      .total-wrap {
+        width: 160px;
+        padding: 0px 10px;
+        &__count {
+          font-weight: 500;
+          font-size: 14px;
+          color: $palette-blue;
+        }
+      }
+    }
+}

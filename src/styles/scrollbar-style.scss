@@ -1,0 +1,17 @@
+@import './variables';
+
+/* #region scrollbar styles */
+::-webkit-scrollbar {
+  width: 3px;
+  height: 3px;
+}
+::-webkit-scrollbar-track:hover {
+  border-radius: 10px;
+}
+:hover::-webkit-scrollbar-thumb {
+  background-color: $gray-light10;
+}
+::-webkit-scrollbar-thumb:hover {
+  border: 2px solid $gray-light10 !important;
+}
+/* #endregion scrollbar styles */

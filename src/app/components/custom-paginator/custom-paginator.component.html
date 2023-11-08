@@ -1,0 +1,20 @@
+<div class="pagination-wrap d-flex justify-content-end">
+  <div class="btn-group pagination-group d-flex justify-content-between" role="group" aria-label="pagination">
+    <button type="button" class="pagination-group__left" [disabled]="currentPage === 1"
+      (click)="onPrevNextChange(paginatorConst.arrowKeyType.prev)">
+      <img class="arrow-prev" src="../../../assets/icons/arrow_left.svg" alt="page-prev">
+    </button>
+    <div class="pagination-group__center d-flex align-items-center justify-content-between">
+      <ng-container *ngFor="let page of pages; let i = index">
+        <button type="button" class="page-btn" [id]="'page-'+page.pageValue" [disabled]="page.pageValue === '...'"
+          [ngClass]="(page.isPageSelected) ? 'active' : ''" [value]="page?.pageValue"
+          (click)="onPageChange(page.pageValue)">{{page.pageValue}}
+        </button>
+      </ng-container>
+    </div>
+    <button type="button" class="pagination-group__right" [disabled]="currentPage === maxPage"
+      (click)="onPrevNextChange(paginatorConst.arrowKeyType.next)">
+      <img class="arrow-next" src="../../../assets/icons/arrow_right.svg" alt="page-next">
+    </button>
+  </div>
+</div>

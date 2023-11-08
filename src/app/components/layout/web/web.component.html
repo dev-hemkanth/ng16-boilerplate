@@ -1,0 +1,67 @@
+<div class="layout-web">
+    <div class="layout-web__nav">
+        <div class="layout-web__nav-menu">
+            <div class="logo">
+                <img src="../../../../assets/images/logo.png" alt="guest-logo"
+                    tooltip="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">
+            </div>
+            <div class="menu-item">
+                <ul class="nav-links">
+                    <li class="nav-item" *ngFor="let nav of navMenu">
+                        <a href="" class="nav-link">
+                            <span class="nav-link__icon"><i [class]="nav.icon"></i></span>
+                            <span class="nav-link__label">{{nav.label}}</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="layout-web__content">
+        <div class="content-header">
+            <h4 class="content-header__text">Dashboard</h4>
+            <span class="content-header__profile">
+                <div class="profile-drop-group btn-group" dropdown placement="bottom right">
+                    <a dropdownToggle type="button" class="profile-dropdown dropdown-toggle"
+                        aria-controls="dropdown-animated">
+                        <img src="../../../../assets/images/avatar.png" alt="user-avatar">
+                    </a>
+                    <ul *dropdownMenu class="dropdown-menu dropdown-menu-right" role="menu"
+                        aria-labelledby="button-animated">
+                        <li role="menuitem">
+                            <a class="dropdown-item" href="#">
+                                <i class="bi bi-person me-1"></i> Profile
+                            </a>
+                        </li>
+                        <li role="menuitem">
+                            <a class="dropdown-item" href="#">
+                                <i class="bi bi-translate me-1"></i> Language - (தமிழ்)
+                            </a>
+                        </li>
+                        <li class="divider dropdown-divider"></li>
+                        <li role="menuitem">
+                            <a class="dropdown-item" href="#">
+                                <i class="bi bi-power me-1"></i> Logout
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </span>
+        </div>
+        <div class="content-body">
+            <app-table [currentPageMockRecords]="tableFinalData"></app-table>
+            <div class="row">
+                <div class="col-6">
+                    <app-custom-item-per-page [totalRecords]="totalItemsCount"
+                        (pagePropertiesEmitter)="setPaginatorPageProperties($event)">
+                    </app-custom-item-per-page>
+                </div>
+                <div class="col-6">
+                    <app-custom-paginator [pageProperties]="paginatorPageProperties"
+                    (finalPagePropertyEmitter)="setFinalPageProperties($event)"></app-custom-paginator>
+                </div>
+            </div>
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</div>

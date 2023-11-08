@@ -1,0 +1,43 @@
+<div class="table-container">
+    <table class="table table-sm ">
+        <thead>
+            <tr>
+              <th scope="col">S.No</th>
+              <td scope="col"> Code</td>
+              <td scope="col"> Name</td>
+              <td scope="col">Native Location</td>
+              <td scope="col">Contact Number</td>
+              <td scope="col">Local Address</td>
+              <td scope="col">Work Start Date</td>
+              <td scope="col">Actions</td>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let record of currentPageMockRecords; let i = index">
+              <td>{{i + 1}}</td>
+              <td>{{record?.code}}</td>
+              <td>{{record?.name}}</td>
+              <td>{{record?.location}}</td>
+              <td>{{record?.number}}</td>
+              <td>{{record?.address}}</td>
+              <td>{{record?.date}}</td>
+              <td>
+                <div class="btn-group dropup table-dropdown" dropdown >
+                    <button dropdownToggle type="button" class="btn" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="bi bi-three-dots-vertical"></i>
+                    </button>
+                    <ul *dropdownMenu class="dropdown-menu dropdown-menu-right" role="menu" aria-labelledby="button-animated">
+                        <li><a class="dropdown-item" href="javascript:void(0)" (click)="IselectedAction(record,Action.Edit)">
+                            <span class="action_icon"><i class="bi bi-pencil-fill"></i></span>Edit</a>
+                        </li>
+                        <li><a class="dropdown-item" href="javascript:void(0)" (click)="IselectedAction(record,Action.Delete)">
+                            <span class="action_icon"><i class="bi bi-trash-fill"></i></span>Delete</a>
+                        </li>
+                        <li><a class="dropdown-item" href="javascript:void(0)" (click)="IselectedAction(record,Action.Print_Id)">
+                           <span class="action_icon"><i class="bi bi-printer-fill"></i></span>Print ID</a></li>
+                    </ul>
+                </div>
+            </td>
+          </tbody>
+    </table>
+</div>

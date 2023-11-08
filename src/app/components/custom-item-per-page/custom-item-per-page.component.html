@@ -1,0 +1,29 @@
+<div class="selector-wrap d-flex align-items-center
+">
+  <div class="row selector-wrap__content">
+    <div class="col-12 d-flex justify-content-between align-items-center">
+      <span class="d-inline-block display-wrap">
+        <label class="display-wrap__content">Showing</label>
+      </span>
+      <span class="d-inline-block page-controller" dropdown>
+        <div class="dropdown" dropdownToggle>
+          <button type="button" class="btn btn-default dropdown-toggle" id="menu1" aria-haspopup="true"
+            aria-expanded="false" ng-click="toggled" [innerHtml]='selectedCount'>
+          </button>
+          <span class="arrow"><i class="bi bi-chevron-down"></i></span>
+          <ul *dropdownMenu class="dropdown-menu" role="menu" aria-labelledby="items">
+            <ng-container *ngFor="let choice of perPageCounts">
+              <li class="options" [ngClass]="choice === selectedCount ? 'active' : ''" role="item"
+                (click)="setSelectedValue(choice)">
+                <a role="menuitem" tabindex="-1">{{choice}}</a>
+              </li>
+            </ng-container>
+          </ul>
+        </div>
+      </span>
+      <span class="total-wrap">
+        <label class="total-wrap__count">from {{totalItemsCount}}</label>
+      </span>
+    </div>
+  </div>
+</div>

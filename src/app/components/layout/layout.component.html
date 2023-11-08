@@ -1,0 +1,13 @@
+<div class="layout">
+
+    <!-- Web layout  -->
+    <ng-container *ngIf="userDevice === 'web'; else elseTemplateMob">
+        <app-web></app-web>
+    </ng-container>
+
+    <!-- Mobile / Tablet layout -->
+    <ng-template #elseTemplateMob>
+        <app-mob></app-mob>
+    </ng-template>
+    
+</div>

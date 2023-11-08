@@ -1,0 +1,96 @@
+@import '../../../../styles/variables.scss';
+@import '../../../../styles/mixins.scss';
+$layout-nav-menu-width: 300px;
+
+.layout-web {
+    display: flex;
+    height: 100%;
+    &__nav {
+        width: $layout-nav-menu-width;
+        padding: 20px;
+        &-menu {
+            background-color: #fff;
+            height: 100%;
+            border-radius: 20px;
+            & .logo {
+                padding: 20px;
+                height: 100px;
+                position: relative;
+                & img {
+                    @include pos-center;
+                    width: 60%;
+                }
+            }
+            & .menu-item {
+                height: calc(100% - 100px);
+                padding: 20px;
+                & .nav-links {
+                    list-style: none;
+                    padding: 0;
+                    margin: 0;
+                    & .nav-item {
+                        & .nav-link {
+                            cursor: pointer;
+                            padding: 10px 0;
+                            display: flex;
+                            align-items: center;
+                            color: $nav-menu-color;
+                            font-size: 1rem;
+                            &:hover {
+                                .nav-link__icon {
+                                    background-color: #DBEAFE;
+                                }
+                            }
+                            &__icon {
+                                display: block;
+                                width: 35px;
+                                height: 35px;
+                                border-radius: 50%;
+                                position: relative;
+                                transition: background-color 300ms ease-in-out;
+                                & i {
+                                    @include pos-center;
+                                }
+                            }
+                            &__label {
+                                margin-left: 10px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &__content {
+        width: calc(100% - $layout-nav-menu-width);
+        padding: 20px;
+       & .content-header {
+        display: flex;
+        justify-content: space-between;
+        &__text {
+            color: $nav-menu-color;
+        }
+        &__profile {
+            & .profile-drop-group {
+                & .profile-dropdown {
+                    & img {
+                        width: 30px;
+                        height: 30px;
+                        border-radius: 50%;
+                    }
+                    &::after {
+                        display: none;
+                    }
+                }
+                & .dropdown-menu {
+                    font-size: 1rem;
+                }
+            }
+        }
+       }
+       & .content-body {
+            height: calc(100% - 50px);
+            overflow-y: auto;
+       }
+    }
+}

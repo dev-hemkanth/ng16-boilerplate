@@ -1,0 +1,49 @@
+<div class="layout-mob">
+    <div class="layout-mob__header">
+        <img class="logo" src="../../../../assets/images/logo.png" alt="logo">
+        <h5 class="page-title" >
+            Dashboard        
+        </h5>
+        <span class="user-profile">
+            <div class="profile-drop-group btn-group" dropdown placement="bottom right">
+                <a dropdownToggle type="button" class="profile-dropdown dropdown-toggle" aria-controls="dropdown-animated">
+                  <img src="../../../../assets/images/avatar.png" alt="user-avatar">
+                </a>
+                <ul *dropdownMenu class="dropdown-menu dropdown-menu-right" role="menu" aria-labelledby="button-animated">
+                    <li role="menuitem">
+                        <a class="dropdown-item" href="#">
+                            <i class="bi bi-person me-1"></i> Profile
+                        </a>
+                    </li>
+                    <li role="menuitem">
+                        <a class="dropdown-item" href="#">
+                            <i class="bi bi-translate me-1"></i> Language - (தமிழ்)
+                        </a>
+                    </li>
+                   
+                    <li class="divider dropdown-divider"></li>
+                    <li role="menuitem">
+                        <a class="dropdown-item" href="#">
+                            <i class="bi bi-power me-1"></i> Logout
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </span>
+    </div>
+    <div class="layout-mob__content">
+        <router-outlet></router-outlet>
+    </div>
+    <div class="layout-mob__footer">
+        <ul class="nav-menu">
+            <li class="nav-item" *ngFor="let nav of navMenu" >
+                <a href="" class="nav-link">
+                    <span>
+                        <span class="nav-link__icon"><i [class]="nav.icon"></i></span>
+                        <span class="nav-link__label" >{{nav.label}}</span>
+                    </span>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>

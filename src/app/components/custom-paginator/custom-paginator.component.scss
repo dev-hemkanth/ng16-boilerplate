@@ -1,0 +1,59 @@
+@import '../../../styles/variables.scss';
+
+.pagination-wrap {
+	width: 100%;
+	height: 40px;
+	& .pagination-group {
+		padding: 5px;
+		&__left {
+			border: none;
+			cursor: pointer;
+			width: 25px;
+      position: relative;
+      right: 10px;
+			background-color: transparent;
+			& .arrow-prev {
+				height: 24px;
+				width: 24px;
+			}
+			&:disabled {
+				cursor: not-allowed;
+			}
+		}
+		&__center {
+			padding: 8px 0px 5px 0px;
+			.page-btn {
+				border: none;
+				border-radius: 50% !important;
+				font-size: 14px;
+				cursor: pointer;
+				background-color: transparent;
+				min-width: 35px;
+				max-width: 85px;
+				color: $palette-blue;
+				font-weight: 500;
+				&.active {
+					background-color: $blue-01;
+					color: $white-01;
+					padding: 5px 10px;
+				}
+				&:disabled {
+					cursor: not-allowed;
+				}
+			}
+		}
+		&__right {
+			width: 25px;
+			border: none;
+			cursor: pointer;
+			background-color: transparent;
+			& .arrow-next {
+				height: 24px;
+				width: 24px;
+			}
+			&:disabled {
+				cursor: not-allowed;
+			}
+		}
+	}
+}
